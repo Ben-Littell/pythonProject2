@@ -7,15 +7,20 @@ def write_file(filename, a_string):
 
 
 def open_file(filename, mode='read'):
-        with open(filename, 'r') as file:
-            if mode == 'read':
-                text = file.read()
-            elif mode == 'readlines':
-                text = file.readlines()
-            elif mode == 'readline':
-                text = file.readline()
-            return text
+    with open(filename, 'r') as file:
+        if mode == 'read':
+            text = file.read()
+        elif mode == 'readlines':
+            text = file.readlines()
+        elif mode == 'readline':
+            text = file.readline()
+        return text
 
 
 # open_ = open_file('test.txt', 'readlines')
 
+def printfile(filename):
+    file = open_file(filename)
+    print(file)
+
+# printfile('first_file.txt')
