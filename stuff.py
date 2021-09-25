@@ -23,4 +23,33 @@ def printfile(filename):
     file = open_file(filename)
     print(file)
 
+
 # printfile('first_file.txt')
+
+def sum_column(filename):
+    total = 0
+    lines = open_file(filename, 'readlines')
+    for line in lines:
+        total += int(line)
+    return total
+
+
+# sum_text = sum_column('sum_numbers.txt')
+# print(sum_text)
+
+def sum_all(filename):
+    numb = 0
+    total = 0
+    file = open_file(filename)
+    for char in file:
+        if char.isdigit():
+            numb += int(char)
+        else:
+            total += numb
+            numb = 0
+    return total
+
+
+
+file_sum = sum_all('sum_all.txt')
+print(file_sum)
