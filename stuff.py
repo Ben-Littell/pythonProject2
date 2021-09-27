@@ -52,3 +52,26 @@ def sum_all(filename):
 
 # file_sum = sum_all('sum_all.txt')
 # print(file_sum)
+
+def read_column(filename, column_num=0):
+    column_list_in = []
+    file = open_file(filename, 'readlines')
+    for line in file:
+        split_line = line.split()
+        column_list_in.append(split_line[column_num])
+    return column_list_in
+
+
+# column_list = read_column('numb_6.txt', 5)
+# print(column_list)
+
+def count_word(filename, word='hi'):
+    counter = 0
+    file = open_file(filename).strip('.').strip('!').lower().split()
+    word_l = word.lower()
+    # for item in file:
+        # if
+    print(file)
+
+
+count_word('zenofpython.txt')
