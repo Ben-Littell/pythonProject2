@@ -50,6 +50,5 @@ def sum_all(filename):
     return total
 
 
-
-file_sum = sum_all('sum_all.txt')
-print(file_sum)
+# file_sum = sum_all('sum_all.txt')
+# print(file_sum)
