@@ -65,13 +65,48 @@ def read_column(filename, column_num=0):
 # column_list = read_column('numb_6.txt', 5)
 # print(column_list)
 
-def count_word(filename, word='hi'):
+# single word
+def count_word(filename, word='is'):
     counter = 0
-    file = open_file(filename).strip('.').strip('!').lower().split()
+    new_word = ''
+    file = open_file(filename).lower().split()
     word_l = word.lower()
-    # for item in file:
-        # if
-    print(file)
+    for item in file:
+        for char in item:
+            if char.isalpha():
+                new_word += char
+        if new_word == word_l:
+            counter += 1
+            new_word = ''
+        else:
+            new_word = ''
+
+    return counter
 
 
-count_word('zenofpython.txt')
+# word_counts = count_word('zenofpython.txt')
+# print(word_counts)
+
+def count_words(filename, words):
+    word_dict = {}
+    new_word = ''
+    file = open_file(filename).lower().split()
+    for word in words:
+        counter = 0
+        word_l = word.lower()
+        for item in file:
+            for char in item:
+                if char.isalpha():
+                    new_word += char
+            if new_word == word_l:
+                counter += 1
+                new_word = ''
+            else:
+                new_word = ''
+        word_dict.update({word: counter})
+
+    return word_dict
+
+
+# words_counter = count_words('zenofpython.txt', ['purity', 'is', 'never'])
+# print(words_counter)
